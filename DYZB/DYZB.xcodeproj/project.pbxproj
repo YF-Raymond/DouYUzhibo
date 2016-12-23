@@ -52,7 +52,7 @@
 		4D55FAF01E0D2ADE00D36A84 /* DYZB */ = {
 			isa = PBXGroup;
 			children = (
-				4DF7AF6C1E0D32AA00E68893 /* Classes */,
+				4DF7AF731E0D365C00E68893 /* Classes */,
 				4D55FAF11E0D2ADE00D36A84 /* AppDelegate.swift */,
 				4D55FAF51E0D2ADE00D36A84 /* Main.storyboard */,
 				4D55FAF81E0D2ADE00D36A84 /* Assets.xcassets */,
@@ -62,59 +62,67 @@
 			path = DYZB;
 			sourceTree = "<group>";
 		};
-		4DF7AF6C1E0D32AA00E68893 /* Classes */ = {
+		4DF7AF731E0D365C00E68893 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4DF7AF701E0D32AA00E68893 /* Main */,
-				4DF7AF6E1E0D32AA00E68893 /* Home */,
-				4DF7AF6F1E0D32AA00E68893 /* Live */,
-				4DF7AF6D1E0D32AA00E68893 /* Follow */,
-				4DF7AF711E0D32AA00E68893 /* Profile */,
-				4DF7AF721E0D32AA00E68893 /* Tools */,
+				4DF7AF771E0D365C00E68893 /* Main */,
+				4DF7AF751E0D365C00E68893 /* Home */,
+				4DF7AF761E0D365C00E68893 /* Living */,
+				4DF7AF7A1E0D365C00E68893 /* Video */,
+				4DF7AF741E0D365C00E68893 /* Focus */,
+				4DF7AF781E0D365C00E68893 /* Mine */,
+				4DF7AF791E0D365C00E68893 /* Tools */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		4DF7AF6D1E0D32AA00E68893 /* Follow */ = {
+		4DF7AF741E0D365C00E68893 /* Focus */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Follow;
+			path = Focus;
 			sourceTree = "<group>";
 		};
-		4DF7AF6E1E0D32AA00E68893 /* Home */ = {
+		4DF7AF751E0D365C00E68893 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		4DF7AF6F1E0D32AA00E68893 /* Live */ = {
+		4DF7AF761E0D365C00E68893 /* Living */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Live;
+			path = Living;
 			sourceTree = "<group>";
 		};
-		4DF7AF701E0D32AA00E68893 /* Main */ = {
+		4DF7AF771E0D365C00E68893 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Main;
 			sourceTree = "<group>";
 		};
-		4DF7AF711E0D32AA00E68893 /* Profile */ = {
+		4DF7AF781E0D365C00E68893 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Profile;
+			path = Mine;
 			sourceTree = "<group>";
 		};
-		4DF7AF721E0D32AA00E68893 /* Tools */ = {
+		4DF7AF791E0D365C00E68893 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		4DF7AF7A1E0D365C00E68893 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Video;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
