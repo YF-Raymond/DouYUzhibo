@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D418FA81E126A3700B16592 /* RecommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D418FA71E126A3700B16592 /* RecommentViewController.swift */; };
 		4D55FAF21E0D2ADE00D36A84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D55FAF11E0D2ADE00D36A84 /* AppDelegate.swift */; };
 		4D55FAF71E0D2ADE00D36A84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D55FAF51E0D2ADE00D36A84 /* Main.storyboard */; };
 		4D55FAF91E0D2ADE00D36A84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D55FAF81E0D2ADE00D36A84 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D418FA71E126A3700B16592 /* RecommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommentViewController.swift; sourceTree = "<group>"; };
 		4D55FAEE1E0D2ADE00D36A84 /* DYZB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYZB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D55FAF11E0D2ADE00D36A84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D55FAF61E0D2ADE00D36A84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				4DF7AF8F1E0D4BC600E68893 /* HomeViewController.swift */,
 				4DF7AF7B1E0D3D8B00E68893 /* Home.storyboard */,
+				4D418FA71E126A3700B16592 /* RecommentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				4D55FAF21E0D2ADE00D36A84 /* AppDelegate.swift in Sources */,
 				4DF7AF9D1E0E0B2500E68893 /* UIColor-Extension.swift in Sources */,
 				4DF7AF991E0D655F00E68893 /* Comment.swift in Sources */,
+				4D418FA81E126A3700B16592 /* RecommentViewController.swift in Sources */,
 				4DF7AF8E1E0D4B8F00E68893 /* MainViewController.swift in Sources */,
 				4DF7AF9B1E0E088C00E68893 /* PageContentView.swift in Sources */,
 				4DF7AF971E0D640000E68893 /* PageTitleView.swift in Sources */,
