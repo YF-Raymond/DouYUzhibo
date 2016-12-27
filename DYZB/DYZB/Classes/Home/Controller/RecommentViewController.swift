@@ -10,10 +10,12 @@ import UIKit
 // MARK:- 常量
 fileprivate let kItemMargin : CGFloat = 10
 fileprivate let kItemW = (kScrennW - 3 * kItemMargin) / 2
-fileprivate let kItemH = kItemW * 3 / 4
+fileprivate let kNornamlItemH = kItemW * 3 / 4
+fileprivate let kPrettyItemH = kItemW * 4 / 3
 fileprivate let kHeaderViewH : CGFloat = 50
 
 fileprivate let NomalCellID = "RecommentCellID"
+fileprivate let PrettyCellID = "PrettyCellID"
 fileprivate let HeaderViewID = "HeaderViewID"
 
 // MARK:- 类
@@ -22,7 +24,7 @@ class RecommentViewController: UIViewController {
     fileprivate lazy var collectionView : UICollectionView = {[weak self] in
         // 1.创建 layout
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: kItemW, height: kItemH)
+        layout.itemSize = CGSize(width: kItemW, height: kNornamlItemH)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = kItemMargin
         layout.headerReferenceSize = CGSize(width: kScrennW, height: kHeaderViewH)
@@ -31,13 +33,15 @@ class RecommentViewController: UIViewController {
         // 2.创建 UICollectionView
         let collectionView = UICollectionView(frame: (self?.view.bounds)!, collectionViewLayout: layout)
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        collectionView.backgroundColor = UIColor.brown
+        collectionView.backgroundColor = UIColor.white
         collectionView.dataSource = self
+        collectionView.delegate = self
 
         // 注册 cell
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: NomalCellID)
+        collectionView.register(UINib(nibName: "NormalCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: NomalCellID)
+        collectionView.register(UINib(nibName: "PrettyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: PrettyCellID)
         // 注册组头
-        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: HeaderViewID)
+        collectionView.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: HeaderViewID)
         return collectionView
     }()
     // MARK:- 系统回调函数
@@ -54,7 +58,7 @@ extension RecommentViewController {
         //添加 collectionView
         view.addSubview(collectionView)
         
-
+        
     }
 }
 
@@ -71,15 +75,29 @@ extension RecommentViewController : UICollectionViewDataSource {
         }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // 1.获取 cell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NomalCellID, for: indexPath)
-        cell.backgroundColor = UIColor.red
-        return cell
+        // 1.定义 cell
+        var cell : UICollectionViewCell?
+        // 2.取出 cell
+        if indexPath.section == 1 {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: PrettyCellID, for: indexPath)
+        } else {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: NomalCellID, for: indexPath)
+        }
+        return cell!
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         // 1.取出 section 的 headerView
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderViewID, for: indexPath)
-        headerView.backgroundColor = UIColor.purple
         return headerView
+    }
+}
+
+// MARK:- UICollectionViewDelegateFlowLayout
+extension RecommentViewController : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if  indexPath.section == 1 {
+            return CGSize(width: kItemW, height: kPrettyItemH)
+        }
+        return CGSize(width: kItemW, height: kNornamlItemH)
     }
 }

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PrettyCollectionViewCell" customModule="DYZB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="210" height="253"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="210" height="253"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMN-aX-p1P" userLabel="主播名">
+                        <rect key="frame" x="5" y="228" width="125" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="wx4-IK-yqb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" title="主播名" image="yanzhiUserIcon">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oht-JO-qLs" userLabel="广州市">
+                        <rect key="frame" x="140" y="228" width="70" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="L0j-g4-TQO"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                        <state key="normal" title="广州市" image="ico_location">
+                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="live_cell_default_phone" translatesAutoresizingMaskIntoConstraints="NO" id="yN6-zo-kkM">
+                        <rect key="frame" x="0.0" y="0.0" width="210" height="223"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgF-Fi-l5A" userLabel="人数">
+                        <rect key="frame" x="145" y="5" width="60" height="14"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="RkV-Wz-gFV"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                        <state key="normal" title="5.5万" image="viewerIcon"/>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="yN6-zo-kkM" secondAttribute="trailing" id="1Ho-xT-zlq"/>
+                <constraint firstItem="gMN-aX-p1P" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="2Tm-p0-15a"/>
+                <constraint firstItem="BgF-Fi-l5A" firstAttribute="trailing" secondItem="yN6-zo-kkM" secondAttribute="trailing" constant="-5" id="3vb-Tq-ean"/>
+                <constraint firstAttribute="bottom" secondItem="Oht-JO-qLs" secondAttribute="bottom" constant="10" id="7tL-XH-XrP"/>
+                <constraint firstItem="Oht-JO-qLs" firstAttribute="leading" secondItem="gMN-aX-p1P" secondAttribute="trailing" constant="10" id="Qsk-VN-U38"/>
+                <constraint firstItem="yN6-zo-kkM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bUL-xa-eK5"/>
+                <constraint firstItem="BgF-Fi-l5A" firstAttribute="top" secondItem="yN6-zo-kkM" secondAttribute="top" constant="5" id="kOh-IH-JEm"/>
+                <constraint firstItem="yN6-zo-kkM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sUQ-WX-1dU"/>
+                <constraint firstItem="gMN-aX-p1P" firstAttribute="top" secondItem="yN6-zo-kkM" secondAttribute="bottom" constant="5" id="ssk-ga-yfB"/>
+                <constraint firstAttribute="bottom" secondItem="gMN-aX-p1P" secondAttribute="bottom" constant="10" id="wyy-Qx-F1W"/>
+                <constraint firstAttribute="trailing" secondItem="Oht-JO-qLs" secondAttribute="trailing" id="zGR-6J-BcM"/>
+            </constraints>
+            <size key="customSize" width="210" height="253"/>
+            <point key="canvasLocation" x="-46" y="-86.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ico_location" width="12" height="12"/>
+        <image name="live_cell_default_phone" width="103" height="103"/>
+        <image name="viewerIcon" width="10" height="8"/>
+        <image name="yanzhiUserIcon" width="12" height="12"/>
+    </resources>
+</document>
