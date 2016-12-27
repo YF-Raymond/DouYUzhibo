@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.statusBarStyle = .lightContent
         UITabBar.appearance().tintColor = UIColor.orange
-        
+        // 设置导航栏的背景颜色
+        let bar = UINavigationBar.appearance()
+        bar.barTintColor = UIColor.orange
         return true
     }
 }
