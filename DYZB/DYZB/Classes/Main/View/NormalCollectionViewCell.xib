@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="253" height="177"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seL-3S-ciP" userLabel="直播标题">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="房间名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seL-3S-ciP" userLabel="房间名">
                         <rect key="frame" x="0.0" y="153" width="248" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="textColor"/>
@@ -32,7 +32,7 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VD0-Ok-Ok8">
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VD0-Ok-Ok8">
                         <rect key="frame" x="10" y="132" width="233" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -40,9 +40,9 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ivx-dO-8BH" userLabel="人数">
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ivx-dO-8BH" userLabel="在线人数">
                         <rect key="frame" x="198" y="5" width="50" height="14"/>
-                        <color key="backgroundColor" white="0.40839301215277779" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.29999999999999999" alpha="0.20395440924657535" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="8Bj-1R-TR5"/>
                         </constraints>
@@ -71,6 +71,12 @@
                 <constraint firstItem="Ivx-dO-8BH" firstAttribute="top" secondItem="kQl-2I-EfS" secondAttribute="top" constant="5" id="z9S-Wp-ASs"/>
             </constraints>
             <size key="customSize" width="253" height="177"/>
+            <connections>
+                <outlet property="nicknameBtn" destination="VD0-Ok-Ok8" id="qac-IK-6xb"/>
+                <outlet property="onlineBtn" destination="Ivx-dO-8BH" id="uPI-cp-RQq"/>
+                <outlet property="roomnameLabel" destination="seL-3S-ciP" id="iRg-yA-9JT"/>
+                <outlet property="sourceImageView" destination="kQl-2I-EfS" id="knp-Lg-CwL"/>
+            </connections>
             <point key="canvasLocation" x="1" y="109"/>
         </collectionViewCell>
     </objects>

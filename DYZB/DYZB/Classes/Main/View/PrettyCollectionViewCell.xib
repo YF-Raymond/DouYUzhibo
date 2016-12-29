@@ -17,8 +17,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="210" height="253"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMN-aX-p1P" userLabel="主播名">
-                        <rect key="frame" x="5" y="228" width="125" height="15"/>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMN-aX-p1P" userLabel="主播名">
+                        <rect key="frame" x="5" y="228" width="140" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="wx4-IK-yqb"/>
                         </constraints>
@@ -28,13 +28,13 @@
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oht-JO-qLs" userLabel="广州市">
-                        <rect key="frame" x="140" y="228" width="70" height="15"/>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oht-JO-qLs" userLabel="广州市">
+                        <rect key="frame" x="155" y="228" width="55" height="15"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="70" id="L0j-g4-TQO"/>
+                            <constraint firstAttribute="width" constant="55" id="L0j-g4-TQO"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
                         <state key="normal" title="广州市" image="ico_location">
                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
@@ -48,9 +48,9 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgF-Fi-l5A" userLabel="人数">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgF-Fi-l5A" userLabel="在线人数">
                         <rect key="frame" x="145" y="5" width="60" height="14"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.29999999999999999" alpha="0.20000000000000001" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="RkV-Wz-gFV"/>
                         </constraints>
@@ -75,6 +75,12 @@
                 <constraint firstAttribute="trailing" secondItem="Oht-JO-qLs" secondAttribute="trailing" id="zGR-6J-BcM"/>
             </constraints>
             <size key="customSize" width="210" height="253"/>
+            <connections>
+                <outlet property="anchorCityBtn" destination="Oht-JO-qLs" id="xQr-IL-M21"/>
+                <outlet property="nicknameBtn" destination="gMN-aX-p1P" id="dxF-4g-wtS"/>
+                <outlet property="onlineBtn" destination="BgF-Fi-l5A" id="bD4-xz-hQz"/>
+                <outlet property="sourceImageView" destination="yN6-zo-kkM" id="aej-b6-F0f"/>
+            </connections>
             <point key="canvasLocation" x="-46" y="-86.5"/>
         </collectionViewCell>
     </objects>

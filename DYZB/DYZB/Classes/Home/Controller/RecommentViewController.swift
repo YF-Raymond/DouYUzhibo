@@ -44,11 +44,14 @@ class RecommentViewController: UIViewController {
         collectionView.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: HeaderViewID)
         return collectionView
     }()
+    fileprivate lazy var recommendVM = RecommendViewModel()
     // MARK:- 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 设置 UI 界面
         setupUI()
-        
+        // 发送网络请求
+        loadData()
     }
 }
 
@@ -58,36 +61,48 @@ extension RecommentViewController {
         //添加 collectionView
         view.addSubview(collectionView)
         
-        
+    }
+}
+
+// MARK:- 发送网络请求
+extension RecommentViewController {
+    fileprivate func loadData() {
+        recommendVM.requestData { 
+            self.collectionView.reloadData()
+        }
     }
 }
 
 // MARK:- UICollectionViewDataSource
 extension RecommentViewController : UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 12
+        return recommendVM.anchorGroups.count
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 8
-        } else {
-            return 4
-        }
+        let group = recommendVM.anchorGroups[section]
+        return group.anchors.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // 1.定义 cell
-        var cell : UICollectionViewCell?
-        // 2.取出 cell
+        // 1.取出模型对象
+        let group = recommendVM.anchorGroups[indexPath.section]
+        let anchor = group.anchors[indexPath.item]
+        // 2.定义 cell
+        var cell : CollectionBaseCell!
+        // 3.取出 cell
         if indexPath.section == 1 {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: PrettyCellID, for: indexPath)
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: PrettyCellID, for: indexPath) as! PrettyCollectionViewCell
         } else {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: NomalCellID, for: indexPath)
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: NomalCellID, for: indexPath) as! NormalCollectionViewCell
         }
-        return cell!
+        // 4.将模型赋值给 cell
+        cell.anchor = anchor
+        return cell
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         // 1.取出 section 的 headerView
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderViewID, for: indexPath)
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderViewID, for: indexPath) as! HeaderCollectionReusableView
+        // 2.取出模型
+        headerView.group = recommendVM.anchorGroups[indexPath.section]
         return headerView
     }
 }

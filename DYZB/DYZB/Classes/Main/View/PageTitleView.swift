@@ -112,20 +112,22 @@ extension PageTitleView {
     @objc fileprivate func titleLabelClick(tapGes : UITapGestureRecognizer) {
         // 1.获取当前 label
         guard let currentLabel = tapGes.view as? UILabel else {return}
-        // 2.获取之前的 label
+        // 2.重复点击处理
+        if currentLabel.tag == currentIndex { return }
+        // 3.获取之前的 label
         let previousLabel = titleLabels[currentIndex]
-        // 3.切换文字颜色
+        // 4.切换文字颜色
         currentLabel.textColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
         previousLabel.textColor = UIColor(r: kNormalColor.0, g: kNormalColor.1, b: kNormalColor.2)
-        // 4.保存最先 label 的下标值
+        // 5.保存最先 label 的下标值
         currentIndex = currentLabel.tag
         
-        // 5.滚动条位置发生改变
+        // 6.滚动条位置发生改变
         let scrollLineX = CGFloat(currentIndex) * scrollLine.frame.width
         UIView.animate(withDuration: 0.1) {
             self.scrollLine.frame.origin.x = scrollLineX
         }
-        // 6.通知代理
+        // 7.通知代理
         delegate?.pageTitleView(titleView: self, selectedIndex: currentIndex)
     }
 }
